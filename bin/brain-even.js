@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
+import { helloUser } from '../src/index.js';
 
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name?: ');
-console.log(`Hello, ${name}!`);
+const name = helloUser();
+
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 const arrayAnswer = [];
@@ -17,6 +17,7 @@ for (let i = 0; i < 3; i += 1) {
   const question = readlineSync.question(`Question: ${questionNumber}\nYour answer: `);
 
   const questionsTerms = (answer, correct) => {
+    console.log(name);
     if (answer === correct) {
       console.log('Correct!');
       arrayAnswer.push('1');
