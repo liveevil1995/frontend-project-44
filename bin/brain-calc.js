@@ -1,51 +1,31 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
-import { helloUser } from '../src/index.js';
+import userMessages from '../src/index.js';
 
-const name = helloUser();
+const rulesOfGame = 'What is the result of the expression?';
+const operatorsForGame = ['*', '-', '+'];
 
-console.log('What is the result of the expression?');
-
-const arrayAnswer = [];
-
-const operatorsOfGame = ['+', '-', '*'];
-
-const generatorOfOperator = (arr) => {
-  const random = arr[Math.floor(Math.random() * arr.length)];
-  return random;
+const randElement = (arr) => {
+  const rand = Math.floor(Math.random() * arr.length);
+  return arr[rand];
 };
 
-const randomOperator = generatorOfOperator(operatorsOfGame);
+const calculationResult = (rand, num1, num2) => {
+  if (rand === '*') {
+    return num1 * num2;
+  } if (rand === '-') {
+    return num1 - num2;
+  }
+  return num1 + num2;
+};
 
-for (let i = 0; i < 3; i += 1) {
+const gameRound = () => {
   const number1 = Math.floor(Math.random() * 100) + 1;
-  const number2 = Math.floor(Math.random() * 10) + 1;
-  const convertateStrOperator = (str) => {
-    if (str === '+') {
-      return number1 + number2;
-    } if (randomOperator === '-') {
-      return number1 - number2;
-    }
-    return number1 * number2;
-  };
-  const calcResult = convertateStrOperator(randomOperator);
-  const answer = readlineSync.question(`Question: ${number1} ${randomOperator} ${number2}\nYour answer: `);
-  const numUnswer = Number(answer);
+  const number2 = Math.floor(Math.random() * 100) + 1;
+  const randOperator = randElement(operatorsForGame);
+  const question = `${number1} ${randOperator} ${number2}`;
+  const correctAnswer = String(calculationResult(randOperator, number1, number2));
+  return [question, correctAnswer];
+};
 
-  const questionsTerms = (answer) => {
-    if (numUnswer === calcResult) {
-      console.log('Correct!');
-      arrayAnswer.push('1');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${calcResult}'.\nLet's try again, ${name}!`);
-      i = 3;
-    }
-
-    if (arrayAnswer.length === 3) {
-      console.log(`Congratulations, ${name}!`);
-    }
-  };
-
-  questionsTerms(answer);
-}
+userMessages(rulesOfGame, gameRound);

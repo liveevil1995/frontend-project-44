@@ -1,38 +1,25 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
-import { helloUser } from '../src/index.js';
+import userMessages from '../src/index.js';
 
-const name = helloUser();
-
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-const arrayAnswer = [];
-const correctAnswer = ['yes', 'no'];
+const rulesOfGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+const correctAnswers = ['yes', 'no'];
+const [answ1, answ2] = correctAnswers;
 
 const isRemainder = (res) => res % 2 === 0;
 
-for (let i = 0; i < 3; i += 1) {
-  const questionNumber = Math.floor(Math.random() * 100);
-  const question = readlineSync.question(`Question: ${questionNumber}\nYour answer: `);
-
-  const questionsTerms = (answer, correct) => {
-    console.log(name);
-    if (answer === correct) {
-      console.log('Correct!');
-      arrayAnswer.push('1');
-      if (arrayAnswer.length === 3) {
-        console.log(`Congratulations, ${name}!`);
-      }
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${name}!`);
-      i = 3;
-    }
-  };
-
-  if (isRemainder(questionNumber)) {
-    questionsTerms(question, correctAnswer[0]);
-  } else {
-    questionsTerms(question, correctAnswer[1]);
+const resultValue = (num) => {
+  if (isRemainder(num)) {
+    return answ1;
   }
-}
+  return answ2;
+};
+
+const gameRound = () => {
+  const questionNumber = Math.floor(Math.random() * 100) + 1;
+  const question = `${questionNumber}`;
+  const correctAnswer = resultValue(questionNumber);
+  return [question, correctAnswer];
+};
+
+userMessages(rulesOfGame, gameRound);
