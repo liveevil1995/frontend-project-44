@@ -2,7 +2,7 @@
 
 import userMessages from '../src/index.js';
 
-const rulesOfGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+const rulesOfGame = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (num1, num2) => {
   let max = Math.max(num1, num2);
