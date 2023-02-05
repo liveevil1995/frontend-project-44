@@ -1,33 +1,33 @@
-import userMessages from '../index.js';
+import runEngine from '../index.js';
+import { getRandomInRange } from '../utils.js';
 
-const calc = () => {
-  const rulesOfGame = 'What is the result of the expression?';
-  const operatorsForGame = ['*', '-', '+'];
+const rulesOfGame = 'What is the result of the expression?';
 
-  const randElement = (arr) => {
-    const rand = Math.floor(Math.random() * arr.length);
-    return arr[rand];
-  };
-
-  const calculationResult = (rand, num1, num2) => {
-    if (rand === '*') {
-      return num1 * num2;
-    } if (rand === '-') {
-      return num1 - num2;
-    }
-    return num1 + num2;
-  };
-
-  const gameRound = () => {
-    const number1 = Math.floor(Math.random() * 100) + 1;
-    const number2 = Math.floor(Math.random() * 100) + 1;
-    const randOperator = randElement(operatorsForGame);
-    const question = `${number1} ${randOperator} ${number2}`;
-    const correctAnswer = String(calculationResult(randOperator, number1, number2));
-    return [question, correctAnswer];
-  };
-
-  userMessages(rulesOfGame, gameRound);
+const getRandomOperator = () => {
+  const operators = ['+', '-', '*'];
+  return operators[getRandomInRange(0, operators.length)];
 };
 
-export default calc;
+const calculation = (num1, num2, operator) => {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      throw new Error(`Operator ${operator} - is incorrect!`);
+  }
+};
+
+const makeRound = () => {
+  const number1 = getRandomInRange(1, 10);
+  const number2 = getRandomInRange(10, 50);
+  const randOperator = getRandomOperator();
+  const question = `${number1} ${randOperator} ${number2}`;
+  const correctAnswer = String(calculation(number1, number2, randOperator));
+  return [question, correctAnswer];
+};
+
+export default () => { runEngine(rulesOfGame, makeRound); };
