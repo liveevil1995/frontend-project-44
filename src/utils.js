@@ -1,9 +1,9 @@
 export const getRandomInRange = (min, max) => Math.floor(min + Math.random() * (max - min + 1));
 
 export const getRandomOperator = () => {
-    const operators = ['+', '-', '*'];
-    return operators[getRandomInRange(0, operators.length - 1)] 
-}
+  const operators = ['+', '-', '*'];
+  return operators[getRandomInRange(0, operators.length - 1)];
+};
 
 export const isRemainder = (res) => res % 2 === 0;
 
