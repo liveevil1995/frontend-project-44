@@ -1,12 +1,7 @@
 import runEngine from '../index.js';
-import { getRandomInRange } from '../utils.js';
+import { getRandomInRange, getRandomOperator } from '../utils.js';
 
 const rulesOfGame = 'What is the result of the expression?';
-
-const getRandomOperator = () => {
-  const operators = ['+', '-', '*'];
-  return operators[getRandomInRange(0, operators.length)];
-};
 
 const calculation = (num1, num2, operator) => {
   switch (operator) {

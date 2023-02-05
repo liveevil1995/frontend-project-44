@@ -28,7 +28,7 @@ const makeRound = () => {
   createArithmeticProgression(randomStart, randomCount, randomLength);
   const progression = createArithmeticProgression(randomStart, randomCount, randomLength);
   const result = getRandomNumberFromProgression(progression);
-  const question = `${progression}`;
+  const question = progression.join(' ');
   const correctAnswer = String(result);
   return [question, correctAnswer];
 };
