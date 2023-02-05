@@ -5,7 +5,15 @@
 
 # Description
 
-**Brain Games** is a set of five console games built on the principle of popular mobile applications for brain pumping. In each game, questions are asked that need to be answered correctly. After three correct answers, it is considered that the game is over. Incorrect answers end the game and offer to pass it again. Games:
+**Brain Games** is a set of five console games built on the principle of popular mobile applications for brain pumping. In each game, questions are asked that need to be answered correctly. After three correct answers, it is considered that the game is over. Incorrect answers end the game and offer to pass it again.
+
+# Setup
+
+```
+make install
+```
+
+# Games
 
 * **brain-calc** is arithmetic expressions that need to be calculated.
 * **brain-progression** is search for missing numbers in a sequence of numbers.
@@ -15,20 +23,40 @@
 
 ## Brain-calc
 
+```
+make brain-calc
+```
+
 [![asciicast](https://asciinema.org/a/0S7xt6ecbPfsYreIu1Ot2JIz5.svg)](https://asciinema.org/a/0S7xt6ecbPfsYreIu1Ot2JIz5)
 
 ## Brain-progression
+
+```
+make brain-progression
+```
 
 [![asciicast](https://asciinema.org/a/W3EmgUSYI8e1TZfDPnVXHKzo6.svg)](https://asciinema.org/a/W3EmgUSYI8e1TZfDPnVXHKzo6)
 
 ## Brain-even
 
+```
+make brain-even
+```
+
 [![asciicast](https://asciinema.org/a/kRwEDF2ijpAU5tr35LBDRTXqn.svg)](https://asciinema.org/a/kRwEDF2ijpAU5tr35LBDRTXqn)
 
 ## Brain-gcd
 
+```
+make brain-gcd
+```
+
 [![asciicast](https://asciinema.org/a/dVgotnUlIAYg0L1eqGN4KJKxr.svg)](https://asciinema.org/a/dVgotnUlIAYg0L1eqGN4KJKxr)
 
 ## brain-prime
+
+```
+make brain-prime
+```
 
 [![asciicast](https://asciinema.org/a/80pdIfAX2dzMHuUiPyPW9T2fR.svg)](https://asciinema.org/a/80pdIfAX2dzMHuUiPyPW9T2fR)

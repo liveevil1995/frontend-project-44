@@ -1,8 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/liveevil1995/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/liveevil1995/frontend-project-44/actions)",
-  "main": "index.js",
+  "description": "A set of five console games built on the principle of popular mobile applications for brain pumping.",
   "type": "module",
   "bin": {
     "brain-games": "bin/brain-games.js",
