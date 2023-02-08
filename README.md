@@ -8,6 +8,9 @@
 **Brain Games** is a set of five console games built on the principle of popular mobile applications for brain pumping. In each game, questions are asked that need to be answered correctly. After three correct answers, it is considered that the game is over. Incorrect answers end the game and offer to pass it again.
 
 # Setup
+```
+git-clone git@github.com:liveevil1995/frontend-project-44.git
+```
 
 ```
 make install

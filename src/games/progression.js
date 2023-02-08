@@ -1,5 +1,5 @@
 import runEngine from '../index.js';
-import { getRandomInRange } from '../utils.js';
+import getRandomInRange from '../utils.js';
 
 const rulesOfGame = 'What number is missing in the progression?';
 
@@ -13,23 +13,14 @@ const createArithmeticProgression = (start, count, length) => {
   return arr;
 };
 
-const getRandomNumberFromProgression = (arr) => {
-  const arrReplace = arr;
-  const randomIndex = getRandomInRange(1, arr.length - 1);
-  const randomIndexValue = arrReplace[randomIndex];
-  arrReplace[randomIndex] = '..';
-  return randomIndexValue;
-};
-
 const makeRound = () => {
   const randomStart = getRandomInRange(2, 4);
   const randomCount = getRandomInRange(2, 4);
   const randomLength = getRandomInRange(5, 10);
-  createArithmeticProgression(randomStart, randomCount, randomLength);
   const progression = createArithmeticProgression(randomStart, randomCount, randomLength);
-  const result = getRandomNumberFromProgression(progression);
+  const index = getRandomInRange(1, progression.length - 1);
+  const correctAnswer = String(progression.splice(index, 1, '..'));
   const question = progression.join(' ');
-  const correctAnswer = String(result);
   return [question, correctAnswer];
 };
 
