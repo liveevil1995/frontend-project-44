@@ -9,7 +9,7 @@
 
 # Setup
 ```
-git-clone git@github.com:liveevil1995/frontend-project-44.git
+git clone git@github.com:liveevil1995/frontend-project-44.git
 ```
 
 ```
@@ -30,7 +30,7 @@ make install
 make brain-calc
 ```
 
-[![asciicast](https://asciinema.org/a/0S7xt6ecbPfsYreIu1Ot2JIz5.svg)](https://asciinema.org/a/0S7xt6ecbPfsYreIu1Ot2JIz5)
+[![asciicast](https://asciinema.org/a/560596.svg)](https://asciinema.org/a/560596)
 
 ## Brain-progression
 
@@ -38,7 +38,7 @@ make brain-calc
 make brain-progression
 ```
 
-[![asciicast](https://asciinema.org/a/W3EmgUSYI8e1TZfDPnVXHKzo6.svg)](https://asciinema.org/a/W3EmgUSYI8e1TZfDPnVXHKzo6)
+[![asciicast](https://asciinema.org/a/560598.svg)](https://asciinema.org/a/560598)
 
 ## Brain-even
 
@@ -46,7 +46,7 @@ make brain-progression
 make brain-even
 ```
 
-[![asciicast](https://asciinema.org/a/kRwEDF2ijpAU5tr35LBDRTXqn.svg)](https://asciinema.org/a/kRwEDF2ijpAU5tr35LBDRTXqn)
+[![asciicast](https://asciinema.org/a/560600.svg)](https://asciinema.org/a/560600)
 
 ## Brain-gcd
 
@@ -54,7 +54,7 @@ make brain-even
 make brain-gcd
 ```
 
-[![asciicast](https://asciinema.org/a/dVgotnUlIAYg0L1eqGN4KJKxr.svg)](https://asciinema.org/a/dVgotnUlIAYg0L1eqGN4KJKxr)
+[![asciicast](https://asciinema.org/a/560602.svg)](https://asciinema.org/a/560602)
 
 ## brain-prime
 
@@ -62,4 +62,4 @@ make brain-gcd
 make brain-prime
 ```
 
-[![asciicast](https://asciinema.org/a/80pdIfAX2dzMHuUiPyPW9T2fR.svg)](https://asciinema.org/a/80pdIfAX2dzMHuUiPyPW9T2fR)
+[![asciicast](https://asciinema.org/a/560605.svg)](https://asciinema.org/a/560605)
